@@ -1,0 +1,396 @@
+$blanco: #ffffff;
+$negro: #333333;
+$color-disabled: #54575c;
+$color-primario : #82388b;
+$color-secundario: #4297de;
+$color-terciario: #f7931e;
+$color-cuaternario: #72b500;
+
+.resultado {
+  .container-title {
+    background-color: $blanco;
+    height: 100%;
+  }
+
+  .desktop .container-title {
+    padding: 1.5rem 0;
+  }
+
+  .container-title {
+    h1 {
+      color: #333333;
+      font-weight: 700;
+    }
+
+    h5 {
+      font-weight: 300;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 22px;
+      display: flex;
+      align-items: center;
+    }
+
+    p {
+      color: $negro;
+      font-size: 16px;
+    }
+  }
+
+  .mobile .container-title .beneficio p {
+    letter-spacing: 0.5px;
+  }
+
+  .desktop .container-title p {
+    font-family: "Poppins", serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+  }
+
+  .sueldo {
+    position: relative;
+  }
+
+  .aumentar img {
+    width: 34%;
+  }
+
+  .sueldo {
+    h1, p {
+      display: inline;
+    }
+  }
+
+  .monto h1 span {
+    color: $negro !important;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 14px;
+  }
+
+  .listado {
+    position: relative;
+    margin-top: 1rem;
+  }
+
+  .beneficio {
+    margin-bottom: 1rem;
+  }
+
+  .dudas {
+    .beneficio {
+      margin-top: 2rem;
+    }
+
+    margin-top: 2rem;
+
+    p {
+      width: 84%;
+      font-family: "Poppins", serif;
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+
+  .mobile {
+    .dudas p {
+      line-height: 21px;
+    }
+
+    .container-title h1.green {
+      font-size: 38px;
+    }
+  }
+
+  .listado .icon {
+    position: relative;
+    left: 0;
+    top: -6%;
+    width: 8%;
+    margin-right: 0.7rem;
+  }
+
+  .btn {
+    width: 70%;
+    font-size: 16px;
+    margin-top: 3rem;
+  }
+
+  .mobile .sueldo .btn {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .btn {
+    &.purple {
+      background-color: $color-primario;
+      width: 50%;
+      font-size: 16px;
+      margin-top: 2rem;
+    }
+
+    &.blue {
+      background-color: $color-secundario;
+      color: $blanco !important;
+      width: 65%;
+      font-size: 16px;
+      margin-top: 2rem;
+    }
+  }
+
+  .desktop .purple {
+    width: fit-content;
+    padding: 0.5rem 2rem;
+  }
+
+  .mujer {
+    width: 100px;
+    right: -34px;
+    top: 28px;
+  }
+
+  .mobile .mujer {
+    right: -10px;
+    top: -28px;
+  }
+
+  .dudas {
+    margin-top: 10rem;
+  }
+
+  .mobile .dudas {
+    margin-top: 8rem;
+  }
+
+  .desktop .ofrecemos {
+    margin: 10rem 0 0 0;
+  }
+
+  .card {
+    width: 14rem !important;
+    margin: 2rem;
+  }
+
+  .desktop .ofrecemos {
+    .card-header {
+      justify-content: center;
+      border: none;
+
+      .icon {
+        width: 30%;
+        height: auto;
+        margin-top: 2rem;
+      }
+    }
+
+    .card-body p {
+      width: 100%;
+      text-align: center;
+      font-family: "Poppins", serif;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 20px;
+    }
+  }
+
+  .ofrecemos {
+    p {
+      margin: 0;
+      width: 70%;
+      font-size: 14px;
+    }
+
+    .icon {
+      border-radius: 50px;
+      width: 8%;
+      height: 9%;
+    }
+  }
+
+  .mobile .ofrecemos .icon {
+    width: 17%;
+    height: 16%;
+  }
+
+  .ofrecemos .beneficio {
+    display: inline-flex;
+  }
+
+  .beneficio {
+    .rentabilidad {
+      background-color: $color-secundario;
+    }
+
+    .comisiones {
+      background-color: $color-terciario;
+    }
+
+    .sac {
+      background-color: $color-cuaternario;
+    }
+  }
+
+  .mobile .beneficio .sac {
+    width: 14% !important;
+    height: 14% !important;
+  }
+
+  .bloque.desktop {
+    margin: 2rem;
+
+    img {
+      position: relative;
+      left: 0;
+      top: 0;
+      width: 45%;
+    }
+  }
+
+  .desktop .dudas img {
+    width: 17%;
+  }
+
+  .container-title {
+    h1 {
+      &.green {
+        color: $color-cuaternario;
+        display: flex;
+        align-items: baseline;
+        letter-spacing: 3px;
+        font-family: "Roboto", serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 50px;
+      }
+
+      span {
+        color: $color-cuaternario;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+
+    width: 600px;
+  }
+
+  .textosFloating p {
+    display: inline;
+    margin: 2rem;
+  }
+}
+
+.flecha img {
+  width: 10%;
+}
+
+.resultado .txtDesktop {
+  &.parrafo1 {
+    margin-left: 10%;
+    margin-top: 9%;
+  }
+
+  &.parrafo2 {
+    margin: 3% 0 0 5%;
+  }
+}
+
+@media (max-width: 62em) {
+  .container-title {
+    padding: 0;
+  }
+
+  .resultado .card {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 48em) {
+  .resultado .container-title h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 36em) {
+  .resultado {
+    .mobile .container-title {
+      margin: 1rem;
+    }
+
+    .ofrecemos p, .dudas p {
+      width: 100%;
+    }
+  }
+
+  .solicitud {
+    img {
+      width: 60%;
+    }
+
+    .container-title {
+      padding: 1rem;
+    }
+  }
+}
+
+@media (max-width: 24em) {
+  .resultado {
+    .mobile .container-title {
+      margin: 0.5rem;
+    }
+
+    .btn {
+      width: 90% !important;
+    }
+
+    .mujer {
+      width: 80px;
+      top: 2.3rem;
+      right: -2rem;
+    }
+
+    .sueldo .beneficio img {
+      width: 7%;
+    }
+
+    .container-title {
+      p {
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.solicitud {
+  .container-block {
+    text-align: center;
+
+    img {
+      margin-top: 5rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .container-title {
+    background-color: $blanco;
+
+    h5 {
+      color: $negro;
+    }
+
+    p {
+      color: $color-disabled;
+      font-family: "Roboto", serif;
+      line-height: 21px;
+    }
+  }
+}

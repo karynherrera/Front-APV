@@ -1,0 +1,363 @@
+$background-footer:#0c4c72;
+$blanco: #ffffff;
+$roboto: "Roboto", serif;
+$poppins: "Poppins", serif;
+$color-primario: #0b7ac7;
+$color-secundario: #82388b;
+$color-terciario: #72b500;
+$blanco-formulario: #f4f4f4;
+$azul-form-focus: #2c7ac9;
+$gris-control-label: #54575c;
+$gris-borde: #999999;
+$gris-terminos: #5b5b5b;
+$gris-small:#6c757d;
+$es-valido: #1bb934;
+$es-invalido: #ed1c24;
+
+@font-face {
+  font-family: "Poppins";
+  src: url(../public/assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../public/assets/fonts/Roboto-Regular.ttf);
+}
+
+* {
+  color: #54575c;
+  font-weight: 400;
+  font-family: $roboto;
+}
+
+section {
+  margin-top: 64px;
+  position: relative;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.container-padre {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.bloque {
+  justify-content: center;
+
+  &.desktop {
+    display: flex;
+  }
+}
+
+.card {
+  box-shadow: 0px 100px 58px rgba(31, 41, 35, 0.00458735), 0px 41.346px 54.0995px rgba(31, 41, 35, 0.0109364), 0px 19.4023px 49.8576px rgba(31, 41, 35, 0.0211526), 0px 7.32773px 44.5609px rgba(31, 41, 35, 0.0458371), 0px 1.03284px 36.9139px rgba(31, 41, 35, 0.0757482), 0px -1.12437px 24.2747px rgba(31, 41, 35, 0.09);
+  border-radius: 4px;
+  width: 100%;
+
+  &.formulario {
+    max-width: 570px;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+  }
+
+  .card-header {
+    background-color: $blanco !important;
+  }
+}
+
+.container-title {
+  background-color: $color-terciario;
+  width: 411px;
+  height: 321px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.mobile .container-title {
+  height: 270px;
+}
+
+.container-title {
+  h1 {
+    color: $blanco;
+    font-size: 36px;
+  }
+
+  p {
+    color: $blanco;
+    margin-top: 1rem;
+    font-family: $poppins;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 16.8px;
+  }
+
+  img {
+    position: absolute;
+    right: 15%;
+    top: 34%;
+  }
+}
+
+.txtDesktop {
+  margin: auto;
+}
+
+.green {
+  color: $color-terciario !important;
+}
+
+.blue {
+  color: $color-primario !important;
+}
+
+.mobile {
+  display: none !important;
+}
+
+/**********************Formulario**********************/
+
+.form {
+  margin-top: 3rem;
+}
+
+.form-control {
+  display: block;
+  line-height: 2em;
+  margin: 0;
+  padding-left: 10px;
+  width: 100%;
+  font-size: medium;
+  border: 1px solid $blanco-formulario;
+  background-color: $blanco-formulario;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: 500;
+
+  &:focus {
+    border: 1px solid $azul-form-focus;
+  }
+}
+
+.control-label {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  bottom: 1.9rem;
+  color: $gris-control-label;
+  transition: 0.2s ease-in-out transform;
+  font-size: 10px;
+}
+
+.form-control {
+  &:placeholder-shown + .control-label {
+    visibility: hidden;
+    z-index: -1;
+    transition: 0.2s ease-in-out;
+  }
+
+  &:not(:placeholder-shown) + .control-label, &:focus:not(:placeholder-shown) + .control-label {
+    visibility: visible;
+    z-index: 1;
+    opacity: 1;
+    transform: translate(5px, -7px);
+    transition: 0.2s ease-in-out transform;
+    font-size: 10px;
+    font-family: "Roboto", serif;
+    font-style: normal;
+    font-weight: normal;
+    color: $gris-control-label;
+  }
+}
+
+.form-group {
+  margin: 12px;
+
+  input, select {
+    border: $gris-borde 1px solid;
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  small {
+    margin: 0;
+    font-size: 12px;
+  }
+}
+
+.select label {
+  width: 100%;
+  font-size: 14px;
+}
+
+.btn {
+  background: $color-secundario;
+  border-radius: 50px;
+  color: $blanco;
+  width: 75%;
+  font-family: "Poppins", serif;
+  font-size: 1rem;
+
+  &:hover {
+    color: $blanco;
+  }
+}
+
+
+.terminosYcondiciones {
+  font-size: 12px;
+  color: $gris-terminos;
+  line-height: 16px;
+
+  a{
+    color: #0b7ac7 !important;
+    cursor: pointer;
+  }
+}
+
+.form-check {
+  margin: 1rem;
+}
+
+.medio {
+  display: flex !important;
+}
+
+
+small {
+  color: $gris-small;
+
+  &.is-invalid {
+    color: $es-invalido;
+  }
+
+  .is-valid {
+    color: $es-valido;
+  }
+}
+
+input[type="checkbox"] + label {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/**********************Fin formulario**********************/
+
+/*********************Inicio Footer************************/
+.footer * {
+  font-size: 10px;
+  color: $blanco;
+}
+.disclaimer {
+  font-size: 10px;
+}
+
+.footer p {
+  padding: 1.5rem;
+  margin: 0;
+}
+
+.footer {
+  background: $background-footer;
+  position: relative;
+  bottom: 0;
+}
+
+/*********************Fin Footer***************************/
+
+/*********************Inicio Modal*************************/
+.modal-content {
+  .modal-body p {
+    font-family: $poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+  }
+
+  .modal-footer {
+    justify-content: center;
+  }
+
+  .modal-title {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/*********************Fin Modal****************************/
+
+@media (max-width: 62em) {
+  .medio {
+    display: none !important;
+  }
+
+  .form {
+    margin-top: -2rem;
+  }
+}
+
+@media (max-width: 48em) {
+  .mobile {
+    display: flex !important;
+    padding: 0;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+
+  .container-padre {
+    display: block;
+  }
+
+  .container-title {
+    padding: 2rem;
+  }
+
+  .bloque {
+    display: flex;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  section .row {
+    margin: 0 !important;
+  }
+
+  .container-title h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 36em) {
+  .container-title h1 {
+    font-size: 2rem;
+    line-height: 1.9rem;
+  }
+
+  body {
+    width: 100% !important;
+  }
+
+  .form {
+    margin-top: calc(10px - 12%);
+    padding: 0 7%;
+  }
+}
+
+@media (max-width: 23.4em) {
+  .label-mobile-error {
+    transform: translate(5px, -25px) !important;
+  }
+}
