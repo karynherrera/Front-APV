@@ -1,25 +1,28 @@
 import React, {useEffect} from 'react';
 import mujerSAC from "../public/assets/svg/mujersac.svg"
 import ChanchitoA from "../public/assets/svg/chanchitoa.svg";
+import ChanchitoB from "../public/assets/svg/chanchitob.svg"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchposts} from "../store/actions/postAction";
 import {Card, Col, Table} from "react-bootstrap";
 import axios from "axios";
 
-
-
-
 export default function Resultado (props){
 
     const sueldoLiquido=props.data.sueldoLiquidoConsulta;
     const ahorroMensual=props.data.aporteApv
+    let recomendacionApv = props.data.recomendacionApv;
+    recomendacionApv = 'B'
     let beneficio = 0;
     let total = 0;
-    console.log(props.data.recomendacionApv);
 
-    if(props.data.recomendacionApv === 'A') {
+    if( recomendacionApv === 'A') {
+
         beneficio = props.data.beneficioRegA;
         total = ahorroMensual + beneficio;
+    } else if(recomendacionApv === 'B') {
+        beneficio = props.data.beneficioRegB;
+        total = props.data.sueldoLiquidoConApvregB;
     }
 
     const headers = {
@@ -50,8 +53,10 @@ export default function Resultado (props){
         <div className="resultado">
             <div className="row">
                 <div className="col-md-8 mx-auto desktop flex-column">
-                    <img src={ChanchitoA} alt="regimen A" />
-                    <h1>Te recomendamos el régimen A</h1>
+                    <img
+                        src={recomendacionApv === 'A' ? ChanchitoA : ChanchitoB }
+                        alt={recomendacionApv === 'A' ? "regimen A"  : "regimen B" }/>
+                    <h1>Te recomendamos el régimen {recomendacionApv}</h1>
                     <p>En  base a tu renta mensual y el monto del aporte quieres realizar el 15% de bonificación por parte del Estado es el que más te conviene.</p>
                 </div>
             </div>
@@ -61,29 +66,31 @@ export default function Resultado (props){
                         <Card.Body>
                             <Card.Text>
                                 <p>Estos son los datos de tu simulación:</p>
-                                <Table hover responsive>
+                                <Table hover responsive
+                                       className="table-borderless"
+                                >
                                     <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Regimen B</th>
+                                        <th>Regimen {recomendacionApv}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
                                         <td>Sueldo líquido:</td>
-                                        <td>{sueldoLiquido}</td>
+                                        <td>${sueldoLiquido.toLocaleString("es-CL")}</td>
                                     </tr>
                                     <tr>
                                         <td>Ahorro mensual:</td>
-                                        <td>{ahorroMensual}</td>
+                                        <td>${ahorroMensual.toLocaleString("es-CL")}</td>
                                     </tr>
                                     <tr>
-                                        <td>Bonificación fiscal:</td>
-                                        <td>{beneficio}</td>
+                                        <td>{recomendacionApv === 'A' ? 'Bonificación fiscal:' : 'Descuento tributario:'}</td>
+                                        <td>${beneficio.toLocaleString("es-CL")}</td>
                                     </tr>
                                     <tr>
-                                        <td>Total ahorro:</td>
-                                        <td>{total}</td>
+                                        <td>{recomendacionApv === 'A' ? 'Total ahorro:' : 'Nuevo sueldo líquido:'}</td>
+                                        <td>${total.toLocaleString("es-CL")}</td>
                                     </tr>
                                     </tbody>
                                 </Table>
