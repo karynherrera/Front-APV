@@ -65,7 +65,7 @@ export default function Resultado (props){
                                     <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Regimen A</th>
+                                        <th>Regimen B</th>
                                     </tr>
                                     </thead>
                                     <tbody>
